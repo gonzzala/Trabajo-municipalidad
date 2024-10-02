@@ -1,0 +1,18 @@
+.userPageContainer {
+width: 100%;
+}
+
+.userPageContent {
+  text-align: center;
+  color: aliceblue;
+  padding-bottom: 4%;
+  display: 'flex';
+  flex-Wrap: 'wrap';
+  margin: 100px 10px 10px 10px;
+}
+
+.reportModal {
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}

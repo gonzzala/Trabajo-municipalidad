@@ -1,0 +1,14 @@
+.adminContainer {
+    width: 100%;
+    color: #fff;
+}
+
+.adminPageContent {
+    margin: 10px;
+    margin-top: 120px;
+}
+.adminImg {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

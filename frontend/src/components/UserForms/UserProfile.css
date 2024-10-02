@@ -1,0 +1,9 @@
+.profileDetails {
+ display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 0px; 
+}
+.userImg {
+    width: 100px;
+    height: 100px;
+  }

@@ -1,0 +1,30 @@
+.homeContainer {
+
+  min-height: 100vh;
+  min-width: 100%;
+    /* width: 100%;
+    height: 100vh; */
+    background-size: cover; 
+
+    display: 'flex';
+    flex-Wrap: 'wrap';
+}
+@media screen and (max-width: 850px) {
+  .homeContainer {
+    height: auto;
+    margin-top: 0.1px; 
+  }
+}
+.homeContent {
+  text-align: center;
+  margin-top: 100px;
+  color: aliceblue;
+  padding-bottom: 4%;
+  display: 'flex';
+  flex-Wrap: 'wrap';
+}
+
+.logo {
+  height: 100vh;
+  width: 100%;
+}
