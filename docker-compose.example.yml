@@ -1,0 +1,51 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: reclamos-app-db
+    environment:
+      MYSQL_ROOT_PASSWORD: <tu_contraseña>
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-scripts:/docker-entrypoint-initdb.d
+      - ./mysql-scripts:/etc/mysql/conf.d
+      - mysql-data:/var/lib/mysql
+    networks:
+      - reclamos-network
+
+  backend:
+    build:
+      context: ./backend
+    container_name: reclamos-app-backend
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: <tu_contraseña>
+      MYSQL_DATABASE: reclamosDB
+    networks:
+      - reclamos-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: reclamos-app-frontend
+    volumes:
+      - ./frontend:/app 
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - reclamos-network
+
+volumes:
+  mysql-data:
+
+networks:
+  reclamos-network:
